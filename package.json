@@ -17,6 +17,7 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "jsep": "^0.3.0",
     "mocha": "*"
   },
   "main": "index"

@@ -12,7 +12,8 @@ module.exports = gen;
  */
 
 function gen(node, fn) {
-  fn && fn(node);
+  var p = fn && fn(node);
+  if (p) return gen(p, fn);
 
   if(node.type === "BinaryExpression") {
     return '(' + gen(node.left, fn) + ' ' + node.operator + ' ' + gen(node.right, fn) + ')'
@@ -21,6 +22,8 @@ function gen(node, fn) {
     return gen(node.callee, fn) + '(' + args.join(', ') + ')';
   } else if(node.type === "UnaryExpression") {
     return node.operator + gen(node.argument, fn);
+  } else if (node.type == 'MemberExpression') {
+    return gen(node.object) + '.' + gen(node.property);
   } else if(node.type === "Literal") {
     return node.raw;
   } else if (node.type === 'Identifier') {
