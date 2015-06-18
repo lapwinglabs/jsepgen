@@ -1,4 +1,10 @@
 /**
+ * Export `gen`
+ */
+
+module.exports = gen;
+
+/**
  * Generate a string from an AST
  *
  * @param {Object} node
