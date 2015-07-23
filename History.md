@@ -1,4 +1,11 @@
 
+1.0.3 / 2015-07-23
+==================
+
+  * Merge pull request #1 from lapwinglabs/fix/array-syntax
+  * add test for array vs object property syntax
+  * correctly support array-like member expressions
+
 1.0.2 / 2015-06-18
 ==================
 
