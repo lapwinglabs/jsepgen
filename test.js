@@ -22,4 +22,15 @@ describe('jsepgen', function() {
     assert.equal('Math.round(((Math.pow(Math.pow(A, B), C) + 5) + Math.pow(10, 5)))', expr);
   })
 
+  it('should correctly distinguish object and array property syntax', function() {
+    var expr = gen(jsep('arr[0]'))
+    assert.equal('arr[0]', expr)
+
+    expr = gen(jsep('obj["hi"]'))
+    assert.equal('obj["hi"]', expr)
+
+    expr = gen(jsep('obj.hi'))
+    assert.equal('obj.hi', expr)
+  })
+
 })
