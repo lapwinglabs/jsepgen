@@ -22,10 +22,11 @@ function gen(node, fn) {
     return gen(node.callee, fn) + '(' + args.join(', ') + ')';
   } else if(node.type === "UnaryExpression") {
     return node.operator + gen(node.argument, fn);
-  } else if (node.type == 'MemberExpression' && node.computed) {
-    return gen(node.object) + '[' + gen(node.property) + ']';
-  } else if (node.type == 'MemberExpression' && !node.computed) {
+  } else if (node.type == 'MemberExpression') {
     return gen(node.object) + '.' + gen(node.property);
+  } else if (node.type == 'ArrayExpression') {
+    var arr = node.elements.map(function (n) { return gen(n, fn) }).join(',');
+    return '[' + arr + ']';
   } else if(node.type === "Literal") {
     return node.raw;
   } else if (node.type === 'Identifier') {
