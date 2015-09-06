@@ -33,4 +33,10 @@ describe('jsepgen', function() {
     assert.equal('obj.hi', expr)
   })
 
+  it('should understand arrays', function() {
+    var expr = gen(jsep('[0, "a", [1, c]]'))
+    assert.equal(expr, '[0,"a",[1,c]]')
+
+  })
+
 })
