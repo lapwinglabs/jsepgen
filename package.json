@@ -1,6 +1,6 @@
 {
   "name": "jsepgen",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Tiny module to generate code from the jsep AST",
   "keywords": [
     "ast",
