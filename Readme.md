@@ -1,7 +1,7 @@
 
 # jsepgen
 
-  Tiny module (15 LOC) to generate code from the [jsep](https://github.com/soney/jsep) AST.
+  Tiny module (42 LOC) to generate code from the [jsep](https://github.com/soney/jsep) AST.
 
 ## Example
 
